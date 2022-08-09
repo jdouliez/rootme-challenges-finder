@@ -9,8 +9,13 @@ The tool runs with `python3`.
 Please make sure to install the dependencies with the following command.
 
 ```bash
+git clone git@github.com:jdouliez/rootme-challenges-finder.git
+cd rootme-challenges-finder
 pip3 install -r requirements.txt
+python3 rootme_chall_finder.py --help
 ```
+
+The easiest way to authenticate is to pass the login form on the website and get the `spip_session` cookie from your browser. An integrated way to login is implemented but does not work properly yet.
 
 ## How to use
 
