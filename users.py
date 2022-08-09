@@ -9,7 +9,10 @@ from config import ROOTME_BASE_URL
 def search_for_user_id(user_to_search, cookie):
     r = requests.get(ROOTME_BASE_URL + "/auteurs", params={"nom": user_to_search}, cookies={"spip_session" : cookie})
     if r.status_code == 200:
-        return json.loads(r.content)[0]['0']['id_auteur']
+        users = json.loads(r.content)[0]
+        for user in users.values():
+            if user['nom'] == user_to_search:
+                return user['id_auteur']
     else:
         return None
 
