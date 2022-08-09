@@ -24,6 +24,7 @@ parser.add_argument("--users", help="Users to compare (separated with a comma (,
 args = parser.parse_args()
 init()
 
+
 if args.list_categories:
     print(Fore.YELLOW + "Available challenges categories are : ")
     for id,name in CHALL_CATEGORIES.items():

@@ -1,4 +1,7 @@
-import requests, json, sys
+import requests
+import json
+import sys
+
 from config import ROOTME_BASE_URL
 from colorama import Fore, Style
 
@@ -8,8 +11,7 @@ def login(login, password):
             json={
                 'login': login.lower(),
                 'password': password
-            },
-            proxies={"https": "http://127.0.0.1:8080"}, verify=False
+            }
         )
         del password
         

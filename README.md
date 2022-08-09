@@ -69,13 +69,14 @@ Available challenges categories are :
 ```
 
 **Use an authentication mechanisms**  
-* --login : Use you username and password
-* --cookie : Provide your spip_session cookie
-* if none, the tool will check if an global env named `ROOTME_SPIP_COOKIE` exists and contains the cookie
+* `--login` : Use you username and password
+* `--cookie` : Provide your spip_session cookie
+* if none, the tool will check if a global env named `ROOTME_SPIP_COOKIE` exists and contains the cookie
 
 
 **Provide users**  
-Use the `--users` with a list a usernames to compare challenges
+Use the `--users` with a list of usernames to compare challenges.  
+You can add as many usernames as you want. 
 
 ```bash
 $> python3 ./rootme_chall_finder.py --users Geluchat,Jrmbt
@@ -223,8 +224,13 @@ User "Jrmbt" is a elite
 
 ![IMG 3](./images/img-3.png)
 
+![IMG 4](./images/img-4.png)
+
+## PR
+Pull request are welcomed !  
+Feel free to participate.
 
 ## Fix/ToDo
 * The /login endpoint from the Rootme API returns "429 Too many request" all the time. Wuut..
-* The script do not save the cookie into a env var with the --store-cookie option (?)
+* The script do not save the cookie into a env var with the `--store-cookie` option (?)
 * Do not display empty categories if no chall are available

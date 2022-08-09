@@ -1,6 +1,7 @@
 import requests
 import json
 import sys
+
 from colorama import Fore, Style
 from config import ROOTME_BASE_URL
 
