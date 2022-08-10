@@ -13,12 +13,20 @@ def search_for_user_id(user_to_search, cookie):
         for user in users.values():
             if user['nom'] == user_to_search:
                 return user['id_auteur']
+    elif r.status_code == 401:
+        print(Fore.RED + f"\n[!] You are not authorized to use the APi. Check your cookie! \n"  + Style.RESET_ALL)
+        print(Fore.YELLOW + "[*] Bye.." + Style.RESET_ALL)
+        sys.exit(2)
     else:
         return None
 
 
 def get_info_from_id(user_id, cookie):
     r = requests.get(f'{ROOTME_BASE_URL}/auteurs/{user_id}', cookies={"spip_session" : cookie})
+    if r.status_code == 401:
+        print(Fore.RED + f"\n[!] You are not authorized to use the APi. Check your cookie! \n"  + Style.RESET_ALL)
+        print(Fore.YELLOW + "[*] Bye.." + Style.RESET_ALL)
+        sys.exit(2)
     return json.loads(r.content)
 
 

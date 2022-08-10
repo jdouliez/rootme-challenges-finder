@@ -8,7 +8,8 @@ from tqdm import tqdm
 from pathlib import Path
 
 from config import DB_CHALLENGES_FILE, DB_FOLDER, ROOTME_BASE_URL
-from users import get_all_info_for_user
+
+from lib.users import get_all_info_for_user
 
 def update_challenges_database(cookie):
     print(Fore.YELLOW + "[+] Updating challenges database..." + Style.RESET_ALL)

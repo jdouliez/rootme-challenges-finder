@@ -5,9 +5,10 @@ import sys
 from colorama import init, Fore, Style
 
 from config import CHALL_CATEGORIES, DB_CHALLENGES_FILE, DB_FOLDER, SPIP_COOKIE_ENV
-from auth import login
-from users import display_info
-from challenges import get_all_rootme_challenges, get_all_users_challenges, get_chall_ids, update_challenges_database
+
+from lib.auth import login
+from lib.users import display_info
+from lib.challenges import get_all_rootme_challenges, get_all_users_challenges, get_chall_ids, update_challenges_database
 
 print()
 
